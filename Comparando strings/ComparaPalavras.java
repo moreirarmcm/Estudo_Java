@@ -1,6 +1,7 @@
-package Comparando_Strings;
+package comparando_Strings;
 
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -39,7 +40,7 @@ public class ComparaPalavras {
 		int salva_arquivo = (sc.nextInt() == 1) ? 1 : 0;
 		if (salva_arquivo == 1){
 			try {
-				PrintStream texto = new PrintStream("Frases.txt"); // Cria um arquivo de texto 
+				PrintStream texto = new PrintStream(new FileOutputStream("Frases.txt",true)); // Cria um arquivo de texto ou, se já ouver um arquivo criado, abre. 
 				texto.println(frases); 
 				texto.close();
 				System.out.println("Arquivo de texto salvo.");
